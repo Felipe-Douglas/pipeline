@@ -1,0 +1,76 @@
+/* Importanto font do google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Reset Css */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    background: #F6F8F9;
+}
+
+/* Style Header Start */
+
+.wrapper-header {
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style Header End */
+
+/* Style Content Start */
+
+.wrapper-container {
+    padding: 0 2rem;
+}
+
+.wrapper-container__pipeline {
+    background: #FFF;
+    width: 700px;
+    margin: 60px auto;
+}
+
+.pipeline--collapse {
+    width: 100%;
+}
+
+.pipeline--summary {
+    list-style: none;
+    border: 1px solid rgba(0, 0, 0, .2);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pipeline--summary::after {
+    content: '\f104';
+    font-family: fontAwesome;
+}
+
+.pipeline--summary:focus::after {
+    content: '\f104';
+    font-family: fontAwesome;
+    transform:rotate(180deg);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Style Content End */
+
+/* Style Footer Start */
+
+.wrapper-footer {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style Footer End */
