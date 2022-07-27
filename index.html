@@ -19,29 +19,47 @@
     <main class="wrapper-container">
         <div class="wrapper-container__pipeline">
             <div class="pipeline--header">
-                <button>Add section</button>
+                <button class="pipeline--header__button--add">Add section</button>
             </div>
             <div class="pipeline--body">
                 <details class="pipeline--collapse">
-                    <summary class="pipeline--summary">Lorem</summary>
+                    <summary class="pipeline--summary" id="summary-order-1">Lorem</summary>
+                    <div class="pipeline--description">
+                        <table class="">
+                            <thead>
+                                <th>User</th>
+                                <th>Money</th>
+                                <th>Priority</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Filipe</td>
+                                    <td>R$ 12,000</td>
+                                    <td>High</td>
+                                </tr>
+                                <tr>
+                                    <td>Filipe</td>
+                                    <td>R$ 12,000</td>
+                                    <td>High</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </details>
+                <details class="pipeline--collapse">
+                    <summary class="pipeline--summary" id="summary-order-2">Lorem</summary>
                     <div class="pipeline--description">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit cumque optio doloremque molestias repellendus, reiciendis unde dolores numquam omnis sint?
                     </div>
                 </details>
                 <details class="pipeline--collapse">
-                    <summary class="pipeline--summary">Lorem</summary>
+                    <summary class="pipeline--summary" id="summary-order-3">Lorem</summary>
                     <div class="pipeline--description">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit cumque optio doloremque molestias repellendus, reiciendis unde dolores numquam omnis sint?
                     </div>
                 </details>
                 <details class="pipeline--collapse">
-                    <summary class="pipeline--summary">Lorem</summary>
-                    <div class="pipeline--description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit cumque optio doloremque molestias repellendus, reiciendis unde dolores numquam omnis sint?
-                    </div>
-                </details>
-                <details class="pipeline--collapse">
-                    <summary class="pipeline--summary">Lorem</summary>
+                    <summary class="pipeline--summary" id="summary-order-4">Lorem</summary>
                     <div class="pipeline--description">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit cumque optio doloremque molestias repellendus, reiciendis unde dolores numquam omnis sint?
                     </div>
@@ -61,5 +79,6 @@
 
     <!-- # Scripts Imports # -->
     <script src="https://kit.fontawesome.com/8d28bc11a0.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
