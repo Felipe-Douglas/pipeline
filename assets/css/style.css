@@ -113,6 +113,7 @@ html, body {
 table {
     border-collapse: collapse;
     width: 100%;
+    text-align: center;
 }
 
 tr, th, td {
@@ -120,9 +121,8 @@ tr, th, td {
     padding: 8px;
 }
 
-tr {
-    border-bottom: none;
-    border-top: none;
+table tbody tr td:nth-child(2) {
+    font-weight: 700;
 }
 
 /* Style Content End */
