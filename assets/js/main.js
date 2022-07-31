@@ -59,14 +59,20 @@ $(document).ready(function() {
     //Quando a página for carregada a lista inicial é renderizada
     renderLista();
     
-    // //Pegando o botão que vai remover um modulo a lista
-    // let removeSection = document.querySelectorAll('.pipeline--button--delete');
-    // for (let i = 0; i < removeSection.length; i++) {
-    //     remove = removeSection[i];
-    //     remove.addEventListener('click', () => {
-    //         console.log(remove)
-    //     });
-    // }
+    //Pegando o botão que vai remover um modulo a lista
+    let removeSection = document.querySelectorAll('.pipeline--button--delete');
+        removeSection.forEach((item, indice) => {
+        item.addEventListener('click', () => {
+            for(let i = 0; i < lista.length; i++) {
+                if(parseInt(item.value) === lista[i]['id']){
+                    lista.splice(indice, 1);
+                }
+            }
+
+            //Chama a função para renderizar a lista novamente
+            renderLista();
+        });
+    });
     
     /*
     *   # Mocks Area End #
