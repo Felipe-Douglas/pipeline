@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,9 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- # Header Area Start # -->
     <header class="wrapper-header">
@@ -19,25 +22,59 @@
     <main class="wrapper-container">
         <div class="wrapper-container__pipeline">
             <div class="pipeline--header">
-                <button class="pipeline--header__button--add">Add section</button>
+                <button class="btn btn-primary pipeline--header__button--add" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Add section</button>
             </div>
             <div class="pipeline--body">
                 <div id="pipeline--content"></div>
             </div>
         </div>
     </main>
-    
+
     <!-- # Content Area End # -->
+
+    <!-- # Modela Area Start # -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nova Seção</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="javascript:alert('Sucesso')" class="modal__form">
+                        <div class="modal__form--content">
+                            <label for="nameSection" class="form-label">Nome Da Seção</label>
+                            <input type="text" name="nameSection" id="nameSection" class="form-control" placeholder="Nome Da Seção" onkeyup="this.value = this.value.replace(/[^0-9]/g, '')">
+                        </div>
+
+                        <div class="modal__form--content">
+                            <label for="benefitsSection" class="form-label">Beneficios dessa seção</label>
+                            <textarea name="benefitsSection" id="benefitsSection" class="form-control" row="3" resize="none"></textarea>
+                        </div>
+                        
+                        <div class="modal__form--content">
+                            <button class="btn btn-primary modal__form--submit" type="submit">Adicionar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- # Modela Area End # -->
 
     <!-- # Footer Area Start # -->
     <footer class="wrapper-footer">
-        <p class="wrapper-footer__copy">Todos os direito reservador &copy; 2022 </p>
+        <p class="wrapper-footer__copy">Todos os direito reservados &copy; 2022 </p>
     </footer>
     <!-- # Footer Area End # -->
 
     <!-- # Scripts Imports # -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/8d28bc11a0.js"></script>
-    <script src="assets/js/main.js"></script> 
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>

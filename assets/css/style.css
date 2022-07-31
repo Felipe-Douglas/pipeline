@@ -110,19 +110,21 @@ html, body {
     background: #F6F8F9;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-    text-align: center;
+.pipeline--beneficios {
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 18px;
 }
 
-tr, th, td {
-    border: 3px solid #ddd;
-    padding: 8px;
+/* Modal */
+
+.modal__form--content:nth-child(2) {
+    margin: 20px 0;
 }
 
-table tbody tr td:nth-child(2) {
-    font-weight: 700;
+.modal__form--content textarea {
+    resize: none;
+    height: 150px;
 }
 
 /* Style Content End */

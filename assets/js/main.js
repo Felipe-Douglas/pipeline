@@ -6,53 +6,50 @@ $(document).ready(function() {
     
 
     //Lista com os modulos iniciais
-    lista = [ 'top', 'middle' ]; 
+    let lista = [
+        { id: 1000, beneficios: 'Cupons de desconto 10%'},
+        { id: 2000, beneficios: 'Cupons de desconto 20%, Cartão da loja'},
+        { id: 3000, beneficios: 'Cupons de desconto 30%'},
+        { id: 4000, beneficios: 'Cupons de desconto 40%'},
+        { id: 5000, beneficios: 'Cupons de desconto 50%, Frete Grátis'},
+    ];
 
     //Pegando o botão que vai adicionar um novo modulo a lista
-    addSection = document.querySelector('.pipeline--header__button--add');
+    let addSection = document.querySelector('.modal__form--submit');
     addSection.addEventListener('click', () => { //Adiciona evento ao clicar no botão
         
-        //Mostra o campo para adicionar o nome do novo modulo
-        section = prompt('novo modulo'); 
-        
-        //Adiciona o novo modulo a lista inicial
-        lista.push(section); 
-        
-        //Chama a função para renderizar a lista novament
+        let nameSection = document.querySelector('#nameSection');
+        let benefitsSection = document.querySelector('#benefitsSection');
+
+        console.log(nameSection);
+
+        // Verifica se todos os campos foram preenchidos
+        if(nameSection.value == "" || benefitsSection.value == "") {
+            alert("preencha todos os dados da nova seção");
+        } else {
+            //Adiciona os valores na lista
+            lista.push({ id: nameSection.value, beneficios: benefitsSection.value});
+        }
+
+        //Chama a função para renderizar a lista novamente
         renderLista(); 
     });
 
-    removeSection = document.querySelector('.pipeline--button--delete');
     
     //Função que vai renderizar a lista a partir do momento que a pagina carregar ou receber novos itens
     function renderLista() {
         let fullLista = 
-            lista.map(function(element, i) { //Map para percorrer a lista 
-                return `
-                    <details class="pipeline--collapse" id="${i}">
-                        <summary class="pipeline--summary">${element}</summary>
-                        <div class="pipeline--description">
-                            <button class="pipeline--button--delete">Remove section</button>
-                            <table>
-                                <thead>
-                                    <th>Nome</th>
-                                    <th>Valor estimado</th>
-                                    <th>Status</th>
-                                    <th>Prioridade</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Filipe Douglas</td>
-                                        <td>R$ 12,000</td>
-                                        <td>Aguardando</td>
-                                        <td>Media</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </details>
-                `
-            });
+        lista.map(element => { //Map para percorrer a lista 
+            return `
+                <details class="pipeline--collapse" id="${element.id}">
+                    <summary class="pipeline--summary">${element.id} pontos</summary>
+                    <div class="pipeline--description">
+                        <button class="pipeline--button--delete" value="${element.id}">Remove section</button>
+                        <p class="pipeline--beneficios">${element.beneficios.replace(/,/g, '<br>')}</p>
+                    </div>
+                </details>
+            `
+        });
         ;
         
         //Pega a tag html pelo id e mostra a lista renderizada
@@ -61,7 +58,16 @@ $(document).ready(function() {
     
     //Quando a página for carregada a lista inicial é renderizada
     renderLista();
-   
+    
+    // //Pegando o botão que vai remover um modulo a lista
+    // let removeSection = document.querySelectorAll('.pipeline--button--delete');
+    // for (let i = 0; i < removeSection.length; i++) {
+    //     remove = removeSection[i];
+    //     remove.addEventListener('click', () => {
+    //         console.log(remove)
+    //     });
+    // }
+    
     /*
     *   # Mocks Area End #
     */
